@@ -1,0 +1,30 @@
+TWO SUM PROBLEM SOLVED USING TWO METHODS:
+1) BRUTE FORCE(NESTED LOOPS)
+2) HASH TABLE
+
+CODE FOR BRUTE FORCE
+IN PYHTON:
+class Solution:
+    def twoSum(self, nums, target):
+        for i in range(len(nums)):
+            for j in range(i + 1, len(nums)):
+                if nums[i] + nums[j] == target:
+                    return [i, j]
+
+// TIME COMPLEXITY = O(N^2)
+// SPACE COMPLEXITY = O(1)
+
+CODE FOR HASH TABLE
+IN PYTHON:
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        mp = {}
+        for i in range(len(nums)):
+            complement = target - nums[i]
+            if complement in mp:
+                return [mp[complement], i]
+            mp[nums[i]] = i
+
+// TIME COMPLEXITY = O(N)
+// SPACE COMPLEXITY = O(N)
+
